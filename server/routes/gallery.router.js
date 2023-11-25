@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('./modules/pool');
+const pool = require('../modules/pool.js');
 // PUT /gallery/like/:id
 router.put('/like/:id', (req, res) => {
   let id = req.params.id;
