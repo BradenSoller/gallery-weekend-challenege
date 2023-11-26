@@ -3,17 +3,15 @@ const router = express.Router();
 const pool = require('../modules/pool.js');
 // PUT /gallery/like/:id
 router.put('/like/:id', (req, res) => {
-  let id = req.params.id;
+  let picid = req.params.id;
   const sqlText =
     `
-      UPDATE shoppinglist 
+      UPDATE gallery 
       SET "likes" = "likes" + 1
-      WHERE id = $2;
+      WHERE id = $1;
       `
   const sqlValues = [
-    1,
-    id
-  
+    picid
   ]
 
   pool.query(sqlText, sqlValues)
@@ -31,7 +29,7 @@ router.get('/', (req, res) => {
   const sqlText = 
     `
         SELECT * FROM gallery
-        ORDER BY "likes", "url";
+        ORDER BY "id";
     `
     pool.query(sqlText)
     .then((result) => {

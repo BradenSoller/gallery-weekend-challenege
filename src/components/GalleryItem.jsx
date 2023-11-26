@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-function GalleryItem({listItems}) {
+
+function GalleryItem({item, updateLike}) {
     const [description, setDescription] = useState(false)
     
 
@@ -11,24 +12,35 @@ function GalleryItem({listItems}) {
 
     const displayText = () => {
         if (description) {
+
             return (
                 <>
-                    lovely
+                    <p>{item.description}</p>
                 </>
-        )
+            )
         } else {
             return (
                 <>
-                {listItems.url}
+                    
+                        <img width={250} height={250} src={item.url} />
+                        
                 </>
             )
-    }
-    }
+        }
+    
+    };
     
     return (
-        <li onClick={toggleDescription}>
+        <>
+            <div className='format' data-testid="galleryItem">
+                <h2>{item.title}</h2>
+        <ul data-testid ="toggle" onClick={toggleDescription}>
             {displayText()}
-        </li>
+                </ul>
+               <span> <button data-testid="like" id={item.id} onClick={updateLike}>like</button> 
+                 <p> {item.likes > 0 ? `${item.likes} people love this !` : `${item.likes}  people like this );`}  </p></span>
+            </div>
+            </>
     )
 
 }

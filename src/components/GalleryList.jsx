@@ -1,21 +1,40 @@
 import GalleryItem from "./GalleryItem";
-function GalleryList({ listItems }) {
+import axios from "axios";
+
+
+function GalleryList({ listItems, getItems }) {
+
+    const updateLike = (e) => {
+       
+        const pictureID = e.target.id
+        axios({
+            method: 'PUT',
+            url: `/gallery/like/${pictureID}`
+        }).then((response) => {
+            console.log("itemID");
+            getItems()
+        }).catch((error) => {
+            console.log("error in put", error)
+        })
+  
+    }
+
+
     return (
-
-        <p>
-            {
-                listItems.map((item) => {
-                    return (
-                        <GalleryItem key={item.id} listItems={listItems} />
-                    )
-                    
-                
-            })
-
-            }
-</p>
-
-
+        
+        
+        <div data-testid="galleryList" className="map">
+            {listItems.map((item) => {
+                return (
+                    <div key={item.id}>
+                        <GalleryItem item={item} updateLike={updateLike} />
+                       
+                    </div>
+                )
+            
+              
+            })}
+        </div>
     )
 }
 

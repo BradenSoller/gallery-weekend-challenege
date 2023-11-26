@@ -1,0 +1,49 @@
+.map{
+
+
+display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Horizontally center items */
+    align-items: center;
+    /* Vertically center items */
+    text-align: center;
+}
+
+
+
+
+.format {
+text-align: center;
+    
+    /* Specify a unit for padding */
+    max-width: 500px;
+    max-height: 500px;
+    border: 1px solid;
+    display: inline-block;
+    margin: 10px;
+    box-sizing: border-box;
+
+
+
+}
+
+
+
+ul{
+
+
+}
+
+img{
+
+
+
+display: block;
+    max-width: 100%;
+
+}
+.header{
+    text-align: center;
+}
