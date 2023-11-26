@@ -33,12 +33,13 @@ function App() {
   
  
     return (
-      <div data-testid="app" className='header'>
-        <header>
+      <div data-testid="app">
+        <header className='header'>
           <h1>React Gallery</h1>
+            <p className='title'> The gallery goes here!</p>
         </header>
 
-        <p>The gallery goes here!</p>
+       
    
 
       
