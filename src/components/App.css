@@ -3,10 +3,9 @@ display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    /* Horizontally center items */
     align-items: center;
-    /* Vertically center items */
-    /* text-align: center; */
+   text-align: center;
+
 
  
 
@@ -16,13 +15,15 @@ display: flex;
  text-align: center;
  max-width: 100%;
  max-height: 100%;
- border: 1px solid;
+ border: 2px solid beige;
  margin: 15px;
- padding: 50px;
- margin-right: 5px;
- margin-left: 5px;
- margin-bottom: 5px;
+ padding: 75px;
+ margin-right: 15px;
+ margin-left: 30px;
+ margin-bottom: 30px;
 float: left;
+
+
 
 
 }
@@ -35,24 +36,28 @@ margin-bottom: 10px;
 }
 
 img{
-align-items: left; 
+align-items: center; 
  max-width: 150px;
 max-height: 150px;
-
 display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+
     /* Ensure images don't have extra space below */
-    margin: 0 auto;
+
     /* Center the image horizontally */
 }
 
 .title{
     text-align: center;
     background-color:beige
+
 }
 
 h2{
 
-text-align: end
+text-align: center
 
 }
 

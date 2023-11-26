@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'test') {
 const pool = new pg.Pool({
     host: 'localhost',
     port: 5432,
-    database: 'react-gallery'
+    database: databaseName
     // allowExitOnIdle: true 
 })
 
